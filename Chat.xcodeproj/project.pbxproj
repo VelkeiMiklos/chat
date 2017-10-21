@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CAD2FC93B58A11750C2E3474 /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D6EC3E950630773DB4C814 /* Pods_Chat.framework */; };
+		F51A6D9C1F9BCC94008F75B5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A6D9B1F9BCC94008F75B5 /* CircleImage.swift */; };
+		F51A6D9F1F9BD894008F75B5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A6D9D1F9BD894008F75B5 /* ProfileVC.swift */; };
+		F51A6DA01F9BD894008F75B5 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F51A6D9E1F9BD894008F75B5 /* ProfileVC.xib */; };
 		F5E14D551F9B75370088EDC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E14D541F9B75370088EDC9 /* AppDelegate.swift */; };
 		F5E14D5A1F9B75380088EDC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E14D581F9B75380088EDC9 /* Main.storyboard */; };
 		F5E14D5D1F9B75380088EDC9 /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5E14D5B1F9B75380088EDC9 /* Chat.xcdatamodeld */; };
@@ -23,6 +26,9 @@
 		097520279E655E0A9D0F4F22 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 		63D6EC3E950630773DB4C814 /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF86723A07B9D855C46960D /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		F51A6D9B1F9BCC94008F75B5 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		F51A6D9D1F9BD894008F75B5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		F51A6D9E1F9BD894008F75B5 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		F5E14D511F9B75370088EDC9 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E14D541F9B75370088EDC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E14D591F9B75380088EDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +73,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F51A6DA11F9BD89C008F75B5 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		F5E14D481F9B75370088EDC9 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +101,8 @@
 		F5E14D531F9B75370088EDC9 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F51A6DA11F9BD89C008F75B5 /* Xibs */,
+				F51A6D9E1F9BD894008F75B5 /* ProfileVC.xib */,
 				F5E14D731F9B825A0088EDC9 /* View */,
 				F5E14D691F9B7B5F0088EDC9 /* Supporting Files */,
 				F5E14D6E1F9B7D8E0088EDC9 /* Controller */,
@@ -116,6 +131,7 @@
 			children = (
 				F5E14D6F1F9B7DA80088EDC9 /* ChatVC.swift */,
 				F5E14D711F9B7DC50088EDC9 /* ChannelVC.swift */,
+				F51A6D9D1F9BD894008F75B5 /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E14D741F9B82A40088EDC9 /* GrdientView.swift */,
+				F51A6D9B1F9BCC94008F75B5 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F51A6DA01F9BD894008F75B5 /* ProfileVC.xib in Resources */,
 				F5E14D621F9B75380088EDC9 /* LaunchScreen.storyboard in Resources */,
 				F5E14D5F1F9B75380088EDC9 /* Assets.xcassets in Resources */,
 				F5E14D5A1F9B75380088EDC9 /* Main.storyboard in Resources */,
@@ -255,6 +273,8 @@
 				F5E14D751F9B82A50088EDC9 /* GrdientView.swift in Sources */,
 				F5E14D701F9B7DA80088EDC9 /* ChatVC.swift in Sources */,
 				F5E14D5D1F9B75380088EDC9 /* Chat.xcdatamodeld in Sources */,
+				F51A6D9C1F9BCC94008F75B5 /* CircleImage.swift in Sources */,
+				F51A6D9F1F9BD894008F75B5 /* ProfileVC.swift in Sources */,
 				F5E14D551F9B75370088EDC9 /* AppDelegate.swift in Sources */,
 				F5E14D6D1F9B7BEF0088EDC9 /* SWRevealViewController.m in Sources */,
 				F5E14D721F9B7DC50088EDC9 /* ChannelVC.swift in Sources */,
