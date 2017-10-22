@@ -363,12 +363,18 @@
                                     <action selector="createAccountBtn:" destination="t6T-mj-qhn" eventType="touchUpInside" id="ajE-MH-nSv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="x03-gs-6CE">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="x03-gs-6CE" firstAttribute="centerX" secondItem="VML-we-d9A" secondAttribute="centerX" id="4dS-Vn-xEH"/>
                             <constraint firstItem="yy3-NI-rlJ" firstAttribute="leading" secondItem="98h-3g-QC0" secondAttribute="leading" constant="60" id="7gc-36-qew"/>
                             <constraint firstItem="yy3-NI-rlJ" firstAttribute="centerX" secondItem="VML-we-d9A" secondAttribute="centerX" id="9J7-Sj-Zcy"/>
                             <constraint firstItem="G1h-e2-0KP" firstAttribute="centerX" secondItem="VML-we-d9A" secondAttribute="centerX" id="9vx-tZ-cxf"/>
+                            <constraint firstItem="x03-gs-6CE" firstAttribute="centerY" secondItem="VML-we-d9A" secondAttribute="centerY" constant="-100" id="FPW-0g-xnS"/>
                             <constraint firstItem="yy3-NI-rlJ" firstAttribute="top" secondItem="G1h-e2-0KP" secondAttribute="bottom" constant="55" id="GRC-Yb-zEq"/>
                             <constraint firstItem="5K4-4Z-UiG" firstAttribute="top" secondItem="yy3-NI-rlJ" secondAttribute="bottom" constant="40" id="GRN-hP-WOE"/>
                             <constraint firstItem="s30-wm-Ea3" firstAttribute="centerX" secondItem="VML-we-d9A" secondAttribute="centerX" id="P7n-ig-rwB"/>
@@ -450,7 +456,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8hl-Jt-wUl">
                                 <rect key="frame" x="137" y="282" width="100" height="126"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="7ME-Go-Dxs">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="7ME-Go-Dxs" customClass="CircleImage" customModule="Chat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="JL8-Ht-8gm"/>
@@ -517,6 +523,10 @@
                                     <action selector="generateBacgroundColorBtn:" destination="QbP-k3-VNG" eventType="touchUpInside" id="CA3-y7-s6v"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ncY-ci-zk3">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -528,14 +538,17 @@
                             <constraint firstItem="Ib4-Ze-88h" firstAttribute="bottom" secondItem="6js-st-PZ7" secondAttribute="bottom" constant="40" id="JVT-eV-aaY"/>
                             <constraint firstItem="ikx-xE-vXO" firstAttribute="top" secondItem="Ib4-Ze-88h" secondAttribute="top" constant="17" id="TxV-9A-NsJ"/>
                             <constraint firstItem="c1S-K0-jMt" firstAttribute="centerX" secondItem="9G2-GJ-Obn" secondAttribute="centerX" id="UJe-Ur-Qn4"/>
+                            <constraint firstItem="ncY-ci-zk3" firstAttribute="centerX" secondItem="9G2-GJ-Obn" secondAttribute="centerX" id="Woz-QH-n6A"/>
                             <constraint firstItem="wgL-ti-g2G" firstAttribute="top" secondItem="phc-6b-6Zv" secondAttribute="bottom" constant="26" id="Xd2-5Y-Re1"/>
                             <constraint firstItem="c1S-K0-jMt" firstAttribute="top" secondItem="8hl-Jt-wUl" secondAttribute="bottom" constant="10" id="e9a-Gf-LLy"/>
                             <constraint firstItem="8hl-Jt-wUl" firstAttribute="centerX" secondItem="9G2-GJ-Obn" secondAttribute="centerX" id="pcM-u1-S1k"/>
                             <constraint firstItem="Ib4-Ze-88h" firstAttribute="trailing" secondItem="ikx-xE-vXO" secondAttribute="trailing" constant="27" id="z47-if-YCZ"/>
+                            <constraint firstItem="ncY-ci-zk3" firstAttribute="centerY" secondItem="9G2-GJ-Obn" secondAttribute="centerY" constant="-100" id="zGn-Uv-sAQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ib4-Ze-88h"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ncY-ci-zk3" id="NS1-xo-miV"/>
                         <outlet property="emailTxt" destination="bdd-az-0OO" id="Bil-rO-9TP"/>
                         <outlet property="passwordTxt" destination="5d1-RR-rQs" id="bpX-qy-iGC"/>
                         <outlet property="userImg" destination="7ME-Go-Dxs" id="7oU-Po-DL6"/>
