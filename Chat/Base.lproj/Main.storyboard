@@ -172,7 +172,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SbJ-Hr-u1X">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SbJ-Hr-u1X">
                                         <rect key="frame" x="0.0" y="104" width="375" height="422"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -183,7 +183,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SzS-WJ-Ou0" id="3C0-Lz-RUN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNC-B6-oG7">
@@ -218,6 +218,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtn:" destination="duf-AO-9Rg" eventType="touchUpInside" id="KuR-Rr-I58"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2o5-EE-2BK" customClass="CircleImage" customModule="Chat" customModuleProvider="target">
                                         <rect key="frame" x="14" y="540" width="90" height="90"/>
@@ -255,15 +258,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YTP-5M-Fsg"/>
                     </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="bfO-HZ-zaU" id="VNc-En-7dw"/>
+                        <outlet property="profileImg" destination="2o5-EE-2BK" id="k0d-Lw-fRm"/>
+                        <outlet property="tableView" destination="SbJ-Hr-u1X" id="gGp-bC-oiK"/>
+                        <segue destination="t6T-mj-qhn" kind="show" identifier="toLogin" id="OhN-9Q-sOv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQE-2u-moh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976.79999999999995" y="-217.24137931034485"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="bAJ-xO-GvQ">
             <objects>
-                <viewController id="t6T-mj-qhn" sceneMemberID="viewController">
+                <viewController id="t6T-mj-qhn" customClass="LoginVC" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VML-we-d9A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +311,7 @@
                                         <rect key="frame" x="0.0" y="47" width="255" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVG-0B-rrs">
                                         <rect key="frame" x="0.0" y="78" width="255" height="2"/>
@@ -313,7 +322,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K4-4Z-UiG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K4-4Z-UiG" customClass="RoundedButton" customModule="Chat" customModuleProvider="target">
                                 <rect key="frame" x="60" y="266" width="255" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -324,6 +333,14 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadious">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtn:" destination="t6T-mj-qhn" eventType="touchUpInside" id="vne-SV-fvW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-xY-V39">
                                 <rect key="frame" x="320" y="37" width="28" height="28"/>
@@ -332,6 +349,9 @@
                                     <constraint firstAttribute="height" constant="28" id="Nu6-Ec-gZ1"/>
                                 </constraints>
                                 <state key="normal" image="closeButton"/>
+                                <connections>
+                                    <action selector="closeBtn:" destination="t6T-mj-qhn" eventType="touchUpInside" id="ExJ-v3-2HO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s30-wm-Ea3">
                                 <rect key="frame" x="88" y="336" width="199" height="26"/>
@@ -339,6 +359,9 @@
                                 <state key="normal" title="Don't have an account? Sign up here">
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountBtn:" destination="t6T-mj-qhn" eventType="touchUpInside" id="ajE-MH-nSv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,15 +381,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="98h-3g-QC0"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTxt" destination="gaU-ON-5yl" id="uG4-jY-8E0"/>
+                        <outlet property="userNameTxt" destination="Xyd-mD-AUz" id="IXq-aO-nBl"/>
+                        <segue destination="QbP-k3-VNG" kind="show" identifier="toCreateAccount" id="z8A-bN-tEB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rP5-nd-c60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8" y="-219.04047976011995"/>
         </scene>
-        <!--View Controller-->
+        <!--Create AccountVC-->
         <scene sceneID="Sos-7X-PqZ">
             <objects>
-                <viewController id="QbP-k3-VNG" sceneMemberID="viewController">
+                <viewController id="QbP-k3-VNG" customClass="CreateAccountVC" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9G2-GJ-Obn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -405,7 +433,7 @@
                                         <rect key="frame" x="0.0" y="94" width="255" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOX-F8-2BG">
                                         <rect key="frame" x="0.0" y="125" width="255" height="2"/>
@@ -415,6 +443,9 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="YmT-Qs-78n"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8hl-Jt-wUl">
                                 <rect key="frame" x="137" y="282" width="100" height="126"/>
@@ -432,6 +463,9 @@
                                         <state key="normal" title="Choose avatar">
                                             <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="chooseAvatarBtn:" destination="QbP-k3-VNG" eventType="touchUpInside" id="U3Z-UR-ajl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -442,6 +476,10 @@
                                     <constraint firstAttribute="height" constant="28" id="aGS-wy-hoU"/>
                                 </constraints>
                                 <state key="normal" image="closeButton"/>
+                                <connections>
+                                    <action selector="closeBtn:" destination="QbP-k3-VNG" eventType="touchUpInside" id="yGs-Ke-jnw"/>
+                                    <segue destination="UVc-jD-CQ0" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="fz3-ap-ajM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phc-6b-6Zv">
                                 <rect key="frame" x="78" y="85" width="219.5" height="30"/>
@@ -449,7 +487,7 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6js-st-PZ7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6js-st-PZ7" customClass="RoundedButton" customModule="Chat" customModuleProvider="target">
                                 <rect key="frame" x="60" y="577" width="255" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -460,13 +498,24 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadious">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccountBtn:" destination="QbP-k3-VNG" eventType="touchUpInside" id="X4q-dt-mmR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1S-K0-jMt">
-                                <rect key="frame" x="88" y="418" width="199" height="26"/>
+                                <rect key="frame" x="113.5" y="418" width="148" height="26"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                <state key="normal" title="Don't have an account? Sign up here">
+                                <state key="normal" title="Generate background color">
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="generateBacgroundColorBtn:" destination="QbP-k3-VNG" eventType="touchUpInside" id="CA3-y7-s6v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -486,8 +535,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ib4-Ze-88h"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTxt" destination="bdd-az-0OO" id="Bil-rO-9TP"/>
+                        <outlet property="passwordTxt" destination="5d1-RR-rQs" id="bpX-qy-iGC"/>
+                        <outlet property="userNameTxt" destination="t0k-oG-nU6" id="ef1-X7-0Mm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2c-zw-5ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UVc-jD-CQ0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2549.5999999999999" y="-217.24137931034485"/>
         </scene>
