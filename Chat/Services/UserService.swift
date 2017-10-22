@@ -25,4 +25,9 @@ class UserService{
         self.name = name
     }
     
+    //Avatar választásnál el kell menteni
+    func setUserAvatar(avatarName: String){
+        self.avatarName = avatarName
+    }
+    
 }

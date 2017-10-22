@@ -12,6 +12,10 @@ import Foundation
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND_TO_CHANNEL = "unwindToChannel"
+let TO_AVATAR = "toAvatar"
+
+//Cells
+let AVATAR_CELL = "avatarCell"
 
 //URL
 let URL_BASE = "https://chatalk.herokuapp.com/v1"

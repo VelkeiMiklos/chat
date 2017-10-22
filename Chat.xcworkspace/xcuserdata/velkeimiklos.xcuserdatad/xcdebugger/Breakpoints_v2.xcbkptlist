@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chat/Controller/CreateAccountVC.swift"
-            timestampString = "530367465.754824"
+            timestampString = "530371747.832383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "createAccountBtn(_:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -15,14 +15,28 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     
+    @IBOutlet weak var userImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     //Variables
-    let avatar_Name:String = "dark5"
-    let avatar_Color:String = "[0.5, 0.5, 0.5, 1]"
+    var avatar_Name:String = "dark5"
+    var avatar_Color:String = "[0.5, 0.5, 0.5, 1]"
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //Ha van kiválasztva avatar akkor azt kell beállítani a képnek
+        if UserService.instance.avatarName != ""{
+            self.userImg.image = UIImage(named: "\(UserService.instance.avatarName)" )
+            avatar_Name = UserService.instance.avatarName
+        }
+    }
+    
+    
     //Actions
     @IBAction func chooseAvatarBtn(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR, sender: nil)
     }
     @IBAction func closeBtn(_ sender: Any) {
         performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
