@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CAD2FC93B58A11750C2E3474 /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D6EC3E950630773DB4C814 /* Pods_Chat.framework */; };
+		F51365DF1F9CB40C00C0B953 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51365DE1F9CB40C00C0B953 /* UserService.swift */; };
 		F51A6D9C1F9BCC94008F75B5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A6D9B1F9BCC94008F75B5 /* CircleImage.swift */; };
 		F51A6D9F1F9BD894008F75B5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A6D9D1F9BD894008F75B5 /* ProfileVC.swift */; };
 		F51A6DA01F9BD894008F75B5 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F51A6D9E1F9BD894008F75B5 /* ProfileVC.xib */; };
@@ -31,6 +32,7 @@
 		097520279E655E0A9D0F4F22 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 		63D6EC3E950630773DB4C814 /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF86723A07B9D855C46960D /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		F51365DE1F9CB40C00C0B953 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F51A6D9B1F9BCC94008F75B5 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		F51A6D9D1F9BD894008F75B5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F51A6D9E1F9BD894008F75B5 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F6C1891F9C844A00E190E2 /* AuthService.swift */,
+				F51365DE1F9CB40C00C0B953 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F51365DF1F9CB40C00C0B953 /* UserService.swift in Sources */,
 				F5E14D751F9B82A50088EDC9 /* GrdientView.swift in Sources */,
 				F5F6C1851F9C7A8B00E190E2 /* Constants.swift in Sources */,
 				F5F6C1871F9C7DFB00E190E2 /* CreateAccountVC.swift in Sources */,

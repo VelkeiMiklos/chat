@@ -17,7 +17,7 @@ let UNWIND_TO_CHANNEL = "unwindToChannel"
 let URL_BASE = "https://chatalk.herokuapp.com/v1"
 let URL_REGISTER = "\(URL_BASE)/account/register"
 let URL_LOGIN = "\(URL_BASE)/account/login"
-
+let URL_ADD_USER = "\(URL_BASE)/user/add"
 //User defaults key
 
 let LOGGED_IN_KEY = "isLoggedIn"
@@ -28,9 +28,6 @@ let USER_EMAIL_KEY = "userEmail"
 typealias CompletionHandler = (_ Success: Bool)-> ()
 
 //Header
-//Header
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
-
-
