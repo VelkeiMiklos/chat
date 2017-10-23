@@ -16,13 +16,14 @@ let TO_AVATAR = "toAvatar"
 
 //Cells
 let AVATAR_CELL = "avatarCell"
-
+let CHANNEL_CELL = "channelCell"
 //URL
-let URL_BASE = "https://chatalk.herokuapp.com/v1"
-let URL_REGISTER = "\(URL_BASE)/account/register"
-let URL_LOGIN = "\(URL_BASE)/account/login"
-let URL_ADD_USER = "\(URL_BASE)/user/add"
-let URL_FIND_USER_BY_EMAIL = "\(URL_BASE)//user/byEmail/"
+let URL_BASE = "https://chatalk.herokuapp.com/v1/"
+let URL_REGISTER = "\(URL_BASE)account/register"
+let URL_LOGIN = "\(URL_BASE)account/login"
+let URL_ADD_USER = "\(URL_BASE)user/add"
+let URL_FIND_USER_BY_EMAIL = "\(URL_BASE)/user/byEmail/"
+let URL_FIND_ALL_CHANNELS = "\(URL_BASE)channel"
 //User defaults key
 
 let LOGGED_IN_KEY = "isLoggedIn"

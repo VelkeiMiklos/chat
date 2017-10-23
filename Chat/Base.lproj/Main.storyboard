@@ -179,7 +179,7 @@
                                             <constraint firstAttribute="height" constant="422" id="E9e-Sz-rVY"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SzS-WJ-Ou0">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="channelCell" id="SzS-WJ-Ou0" customClass="ChannelCell" customModule="Chat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SzS-WJ-Ou0" id="3C0-Lz-RUN">
@@ -199,6 +199,9 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="channelLbl" destination="lNC-B6-oG7" id="4Hd-pk-oNH"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -211,6 +214,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srm-jE-lAR">
                                         <rect key="frame" x="288" y="60" width="22" height="24"/>
                                         <state key="normal" image="addChannelButton"/>
+                                        <connections>
+                                            <action selector="addChannelBtn:" destination="duf-AO-9Rg" eventType="touchUpInside" id="2Pg-0K-RH7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfO-HZ-zaU">
                                         <rect key="frame" x="129" y="569" width="46" height="33"/>
@@ -261,7 +267,7 @@
                     <connections>
                         <outlet property="loginBtn" destination="bfO-HZ-zaU" id="VNc-En-7dw"/>
                         <outlet property="profileImg" destination="2o5-EE-2BK" id="k0d-Lw-fRm"/>
-                        <outlet property="tableView" destination="SbJ-Hr-u1X" id="gGp-bC-oiK"/>
+                        <outlet property="tableView" destination="SbJ-Hr-u1X" id="nGl-6s-pMb"/>
                         <segue destination="t6T-mj-qhn" kind="show" identifier="toLogin" id="OhN-9Q-sOv"/>
                     </connections>
                 </viewController>

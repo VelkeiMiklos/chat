@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateChannelVC" customModule="Chat" customModuleProvider="target">
             <connections>
+                <outlet property="bgView" destination="QTo-uR-pQc" id="mL2-zi-tQk"/>
                 <outlet property="channelNameTxt" destination="ZC2-3N-cmg" id="Hjv-gP-Bh2"/>
                 <outlet property="descriptionTxt" destination="Dzl-Hk-30W" id="fIT-am-qfm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -67,7 +68,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nnC-31-bRv">
                             <rect key="frame" x="44" y="76.5" width="255" height="74"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="channelname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-3N-cmg">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="channel name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-3N-cmg">
                                     <rect key="frame" x="0.0" y="0.0" width="255" height="17"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
