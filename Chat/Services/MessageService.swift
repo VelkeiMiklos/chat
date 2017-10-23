@@ -11,9 +11,12 @@ import Alamofire
 import SwiftyJSON
 class MessageService{
     
+    //Variables
     static let instance = MessageService()
     var channels = [Channel]()
+    var selectedChannel: Channel?
     
+    //Functions
     func findAllChannels(completion: @escaping CompletionHandler){
         let header = [
             "Authorization":"Bearer \(AuthService.instance.token)",
@@ -34,14 +37,18 @@ class MessageService{
                         self.channels.append(channel)
                     }
                 }
-                //print(self.channels[0].name)
+                //Jelezzük, hogy betöltöttük a channelek-et
+                NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                 completion(true)
             }else{
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
         }
-        
+    }
+    
+    func clearChannels(){
+        channels.removeAll()
     }
    
 }

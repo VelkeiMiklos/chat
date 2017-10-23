@@ -23,9 +23,10 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        //Figyelő létrehozása a notificationre
+        //Figyelő létrehozása a  used data change notificationre
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-        
+        //Figyelő a channel loaded-re
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         // Itt figyeljük ha igazzal tér vissza akkor új channel lett létrehozva és frissíteni kell a táblát
         SocketService.instance.getChannel { (success) in
             if success{
@@ -65,6 +66,9 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @objc func userDataDidChange(_ notif: Notification){
         setUpUserInfo()
     }
+    @objc func channelsLoaded(_ notif: Notification){
+        self.tableView.reloadData()
+    }
     
     func setUpUserInfo(){
         if AuthService.instance.isLoggedin{
@@ -72,9 +76,11 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginBtn.setTitle(UserService.instance.name, for: .normal)
             profileImg.backgroundColor = UserService.instance.getUIColor(color: UserService.instance.avatarColor)
         }else{
+            // Ha nem vagyunk belépve akkor mindent vissza kell állítani
             loginBtn.setTitle("Login", for: .normal)
             profileImg.image = UIImage(named: "menuProfileIcon")
             profileImg.backgroundColor = UIColor.clear
+            tableView.reloadData()
         }
     }
     //TableView
@@ -92,5 +98,15 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }else{
             return ChannelCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       //Elmenteni a kiválasztott channelt
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        //Channel választva küldeni a notification-t
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        //vissza állítani a nézetet
+        self.revealViewController().revealToggle(true)
     }
 }

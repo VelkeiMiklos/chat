@@ -138,7 +138,6 @@ class AuthService{
                 guard let data = response.data else { return }
                 self.getDataFromResponseData(data: data)
                 completion(true)
-                completion(true)
             }else{
                 completion(false)
                 debugPrint(response.result.error as Any)
