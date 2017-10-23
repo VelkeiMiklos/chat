@@ -294,7 +294,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="yy3-NI-rlJ">
                                 <rect key="frame" x="60" y="146" width="255" height="80"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xyd-mD-AUz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xyd-mD-AUz">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -388,8 +388,9 @@
                         <viewLayoutGuide key="safeArea" id="98h-3g-QC0"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="x03-gs-6CE" id="Dbz-Km-E23"/>
+                        <outlet property="emailTxt" destination="Xyd-mD-AUz" id="jsC-qW-Mlw"/>
                         <outlet property="passwordTxt" destination="gaU-ON-5yl" id="uG4-jY-8E0"/>
-                        <outlet property="userNameTxt" destination="Xyd-mD-AUz" id="IXq-aO-nBl"/>
                         <segue destination="QbP-k3-VNG" kind="show" identifier="toCreateAccount" id="z8A-bN-tEB"/>
                     </connections>
                 </viewController>

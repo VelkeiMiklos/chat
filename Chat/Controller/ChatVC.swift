@@ -19,6 +19,14 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        //Ha bezárjuk az alkalmazást és újra megnyitjuk de be voltunk jelentkezve
+        if AuthService.instance.isLoggedin{
+            AuthService.instance.findUserByEmail(completion: { (sucess) in
+                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+            })
+        }
+        
+        
     }
     
     

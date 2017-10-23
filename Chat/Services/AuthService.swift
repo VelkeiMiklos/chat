@@ -118,20 +118,45 @@ class AuthService{
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                let json = JSON(data: data)
-                let id = json["_id"].stringValue
-                let color = json["avatarColor"].stringValue
-                let avatarName = json["avatarName"].stringValue
-                let email = json["email"].stringValue
-                let name = json["name"].stringValue
-                
-                UserService.instance.setUserData(id: id, avatarColor: color, avatarName: avatarName, email: email, name: name)
+                self.getDataFromResponseData(data: data)
                 completion(true)
-                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
         }
     }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler){
+ 
+        let header = [
+            "Authorization":"Bearer \(AuthService.instance.token)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        Alamofire.request("\(URL_FIND_USER_BY_EMAIL)\(AuthService.instance.userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error == nil{
+                guard let data = response.data else { return }
+                self.getDataFromResponseData(data: data)
+                completion(true)
+                completion(true)
+            }else{
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func getDataFromResponseData(data: Data){
+
+        let json = JSON(data: data)
+        let id = json["_id"].stringValue
+        let color = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
+        
+        UserService.instance.setUserData(id: id, avatarColor: color, avatarName: avatarName, email: email, name: name)
+        
+    }
+    
 }
