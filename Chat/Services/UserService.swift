@@ -79,5 +79,6 @@ class UserService{
         AuthService.instance.token = ""
         AuthService.instance.userEmail = ""
         MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
     }
 }
